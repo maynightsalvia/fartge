@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.14)  14 MAY 2026 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.14)  14 MAY 2026 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,7 +910,7 @@ usr/share/texmf/fonts/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf/font
 s/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
 per/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></u
 sr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on "ASPHL Course Notes.pdf" (29 pages, 271375 bytes).
+Output written on "ASPHL Course Notes.pdf" (29 pages, 271380 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  138 compressed objects within 2 object streams
