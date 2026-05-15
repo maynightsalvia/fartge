@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[openany]{book}
 \usepackage{titlesec,titletoc,indentfirst,amsmath,amssymb,amsthm,amsfonts,mathtools,enumitem,graphicx,fancyhdr,environ,setspace,tikz}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[most]{tcolorbox}
@@ -22,50 +22,41 @@
 \title{Spring 2026 Tutoring Notes}
 \author{Austin Kim}
 
+\titleformat{\chapter}
+	{\LARGE}{\textbf{\llap{\secmark\hspace{0.2cm}}Chapter \thechapter}\\}{1em}{}
+\titlespacing{\chapter}
+	{0pc}{3.5ex plus 0.1ex minus 0.2ex}{1.5ex minus .1ex}
+\titlecontents{chapter}[20pt]{}
+	{\Large\contentslabel[\textit{\textbf{\llap{\secmark\thecontentslabel}}}]{10pt}}{}{}
+
 \titleformat{\section}
-	{\LARGE}{\textbf{\llap{\secmark\hspace{0.2cm}}Chapter \thesection}\\}{1em}{}
+	{\Large}{\textbf{\llap{\secmark\hspace{0.2cm}}\thesection}}{1em}{}
 \titlespacing{\section}
 	{0pc}{3.5ex plus 0.1ex minus 0.2ex}{1.5ex minus .1ex}
-\titlecontents{section}[0.907935355cm]{}
-	{\Large\contentslabel[\textit{\textbf{\llap{\secmark}\thecontentslabel}}]{0.9cm}}{}{}
+\titlecontents{section}[42pt]{}
+	{\contentslabel[\textit{\llap{\secmark\thecontentslabel}}]{10pt}}{}{}
 
 \titleformat{\subsection}
-	{\Large}{\textbf{\llap{\secmark\hspace{0.2cm}}\thesubsection}}{1em}{}
+	{\large}{\textbf{\llap{\secmark\hspace{0.2cm}}\thesubsection}}{1em}{}
 \titlespacing{\subsection}
 	{0pc}{3.5ex plus 0.1ex minus 0.2ex}{1.5ex minus .1ex}
-\titlecontents{subsection}[1.7cm]{}
-	{\contentslabel[\textit{\llap{\secmark}\thecontentslabel}]{1cm}}{}{}
-
-\titleformat{\subsubsection}
-	{\large}{\textbf{\llap{\secmark}\thesubsubsection}}{2em}{}
-\titlespacing{\subsubsection}
-	{3pc}{3.5ex plus 0.1ex minus 0.2ex}{1.5ex minus .1ex}
-\titlecontents{subsubsection}[2.75cm]{}
-	{\contentslabel[\textit{\llap{\secmark}\thecontentslabel}]{1.3cm}}{}{}
+\titlecontents{subsection}[64pt]{}
+	{\contentslabel[\textit{\llap{\secmark\thecontentslabel}}]{10pt}}{}{}
 \begin{document}
 \maketitle
-\newpage
 
-\setcounter{section}{-1}
-\section{Preliminaries}
 \setlength{\headsep}{0.5cm}
-\subsection{Foreword}
-\normalsize \indent afasdjf;dskafdklfasf\vspace{0.6cm}\\
-Until then,\\
-Austin Kim\\
-Philadelphia, PA\\
-08 May, 2026
-\newpage
+\section*{Foreword}
+\normalsize \indent hello!! :3 \vspace{0.6cm}\\
+austin kim
 
 \tableofcontents
-\newpage
-\pagestyle{fancy}
-\section{Numbers}
-\subsection{Preliminaries}
+\chapter{Numbers}
+\section{Preliminaries}
 Before we begin the our work on defining numbers, it is important to ask why we should care at all about the particular labor that we are about to undertake. This is a fairly good habit; a student should always ask why we should care about anything that follows. It highlights the importance of what we are learning, and a good answer to such a question will also define a relation between things that we already know and the things we are about to learn.\par
 Numbers are a majority of where we start our study of mathematics. They are the motivation for all of mathematics --- we use them to count dumplings, tell people how much money we made, and tell our parents we have only been goofing off for 30 minutes, not 50, and that we will get back to doing homework soon enough (does every mother say that it's `almost 11' when it's actually just 10:15? How is that at all close to 11???). However, it is not always obvious how these numbers work: our counting numbers are very natural ideas; we are born and immediately have the concept of having ten toes or six siblings. The following ideas, such as fractions and decimals, are a lot less simple, and they warrant some extra study and formal introduction. In fact, even the natural numbers and integers have certain virtues and weaknesses that are not always immediately obvious.\par
 All of this is to say that it is actually worth speaking about numbers at a more sophisticated level than waving our hands and saying, ``well, they are what they are, and everyone knows how they act." I hope that by the end of this section, the reader develops at least some appreciation for the complexity and often strange nature of numbers. Let's begin!
-\subsection{Natural and Whole Numbers}
+\section{Natural and Whole Numbers}
 \begin{definition}[(Natural Number, $\mathbb{N}$)]
 	A natural number $n$ is essentially a counting number --- think of our familiar numerals 1, 2, 3, 4, etc. These proceed infinitely; as far as you can count, that number will still be a natural number. In particular, the group of natural numbers $\mathbb{N}$ (this is the symbol for the entire group of natural numbers) is infinite.
 \end{definition}
@@ -77,7 +68,7 @@ All of this is to say that it is actually worth speaking about numbers at a more
 \end{definition}
 We can observe that natural and whole numbers are able to do all of the nice operations of addition, subtraction and multiplication. We may also define a new set of numbers, though, using the idea of subtraction. In particular, we want to have a way to express that some numbers can be \textit{negative} --- in some sense, the opposite of addition! First, we will discuss some vocabulary that will be useful as we move forward.
 
-\subsection{Integers and a Few Useful Words}
+\section{Integers and a Few Useful Words}
 \begin{definition}[(Inverse)]
 	This is more of an English vocabulary definition than a mathematical definition. An inverse is something like the opposite of something else, or something that undoes something else.
 \end{definition}
@@ -90,13 +81,13 @@ We can observe that natural and whole numbers are able to do all of the nice ope
 It is useful to note that we are now able to fully perform addition and subtraction with no worries about `going outside' of our number system! For example, previously, if we asked about the result of a computation such as $2-3$, we would be left wondering what exactly could possibly be the result. However, now, we can safely claim that it is $-1$, and the integers are what allow this.\par
 However, we run into some problems when we move to division: we cannot produce answers to seemingly possible operations such as $2\div3$. This gives us motivation to define an even larger set of numbers with a new entry, the fraction. Here we will call this system the `rational numbers,' written as $\mathbb{Q}$.
 
-\subsection{The Rational Numbers}
+\section{The Rational Numbers}
 \begin{definition}[(Rational Number, $\mathbb{Q}$)]
 	A rational number $r$ is a number of the form $\dfrac{p}{q}$, where $p$ and $q$ are integers.
 \end{definition}
 We usually want to reduce this fully. For example, we can say $\dfrac{2}{6}$ is a rational number, and that is entirely true, but we would really like to call it $\dfrac{1}{3}$ $\left(\text{to see how this happens, multiply }\dfrac{2}{6}\text{ by }\dfrac{\frac{1}{2}}{\frac{1}{2}}\right)$.\par
 Well, rationals are \textit{very} nice: within the rational numbers $\mathbb{Q}$, we can add and subtract freely without going outside of our number system, since every rational number has its additive inverse: if we have a rational number $\dfrac{p}{q}$, we also have the rational number $\dfrac{-p}{q}$, since $-p$ is still an integer, so we are still talking about a rational number. In fact, a similar thing is true for multiplication now: if I have a rational number $\dfrac{p}{q}$ and we multiply it by $\dfrac{q}{p}$, which is obviously another rational number since both $q$ and $p$ are integers, we get 1!
-\subsubsection{Let's Talk About Fractions and Decimals!}
+\section{Let's Talk About Fractions and Decimals!}
 So... what is a decimal, then? We talked about rational numbers, and it seems like there are a \textit{LOT} of them, but we still have not discussed decimals.\par
 \begin{definition}[(Numerator, Denominator)]
 	In a rational number $r = \dfrac{p}{q}$, the numerator is $p$ and the denominator is $q$.
@@ -105,7 +96,7 @@ For the most part, fractions will suffice. Daily life, ranging from cooking past
 This means something very important: every fraction can be converted to a decimal if we need to do so. The fact that these decimals are truly equal to their fraction counterparts can be observed by adding and multiplying with them to show that they behave exactly as the fraction should. For example, $0.5$ will be seen to act exactly as $\dfrac{1}{2}$ does, where adding it to itself results in $1$, and multiplying it by $2$ gives $1$ as well.\par
 However, decimals are actually a \textit{larger} system of numbers than fractions (or, in our fancy words, rational numbers) are. This delves a bit into forbidden territory, but we shall address it anyway after a short excursion to pictures.
 
-\subsection{A Few Diagrams for the Visual Learner}
+\section{A Few Diagrams for the Visual Learner}
 Well, how can we visualize any of this? There is some good news: numbers, as strange as they are, can be placed on the familiar number line, and the way that we can see this is shown below. \vspace{0.4cm}
 \begin{center}
 	\begin{tikzpicture}
@@ -129,7 +120,7 @@ Why does this matter? Well, the upshot is that we can stuff \textit{infinite} fr
 \end{center}\par
 We can see above the idea of stuffing a bunch of rational numbers in between whole integers. In fact, if we are creative, we can make even \textit{more} filling by taking any two rational numbers $\dfrac{p_{1}}{q_{1}},\dfrac{p_{2}}{q_{2}}$, adding them, and dividing them by two to find the rational number in the middle of them. This usually returns a very ugly number $\left(\text{in particular, it is written }\dfrac{p_{1}q_{2}+p_{2}q_{1}}{2p_{2}q_{2}}\right)$, but we can actually simply think about why this should still be a rational number: we remember that the `good' part of rational numbers is that any two rational numbers added or multiplied together is still a rational number, so surely adding two rational numbers then dividing them by two, which is also multiplying by $\dfrac{1}{2}$, should give us another rational number.
 
-\subsection{Some Forbidden Numbers: The Irrational Number System}
+\section{Some Forbidden Numbers: The Irrational Number System}
 So... what is an `irrational number,' then? Is it a number that makes no sense?\par
 Sort of.
 \begin{definition}[(Irrational Number)]
@@ -143,7 +134,7 @@ Sort of.
 The important part here is to note that the existence of irrational numbers shows that even though every fraction can be written as a decimal, not every decimal can be written as a fraction. Still, though, since we understand decimal numbers as ``numbers between integers," we can also see that irrational numbers are part of our `fillings' between integers. For example, the number $\pi$ is greater than 3 but less than 4, so it lies somewhere between the two.\par
 This concludes, for now, our study of different types of numbers. There is a very abstract idea about why this is the temporary stopping point for our definitions of numbers, but that is significantly too advanced for even notes such as this. It essentially boils down, however, to the idea given above: that we have finished filling in the blank spaces between our integers.
 
-\subsection{Exercises}
+\section{Exercises}
 Every student must complete exercises, and many of them, in order to fully understand the mathematics that they are learning. I, myself, have tried to dodge these exercises as they are often difficult and sometimes dry. However, it is unfortunately a fact that practice must be done in order to improve at anything. I hope that the reader will understand this necessity and complete at least half of these exercises. Bold-faced problems are exceptionally difficult and pose genuine problem-solving exercises; these will not be found in every exercise section, and they often hinge on the reader having read and understood the optional difficult sections. The rest of the exercises are largely small recitations of definitions or checks to show that the reader has thoroughly read and understood all of the definitions and examples.
 \begin{enumerate}
 	\item Give six examples of natural numbers.
@@ -153,17 +144,15 @@ Every student must complete exercises, and many of them, in order to fully under
 	\item \textbf{Explain the relationship between fractions and rational numbers. Which fractions are rational numbers, and which rational numbers are fractions? Are there fractions that are \textit{not} rational numbers, or rational numbers that are \textit{not} fractions?}
 	\item \textbf{Is every rational number able to be written as a decimal? Is every decimal able to be written as a rational number? If not, either give an example that defends your answer, or intuitively explain why the statement is false.}
 \end{enumerate}
-\newpage
 
-\section{Operations}
-\subsection{Preliminaries}
+\chapter{Operations}
+\section{Preliminaries}
 Numbers are fine and well, but we would really also like to know what to do with them. In a vacuum, these numbers do nothing, and the natural thing to do is to look for actual usages of them. Here operations come into play, and these are quite familiar. Addition, subtraction, multiplication, and division are our familiar friends, and in later studies, the reader will see many other, more complex operations (exponentiation, logarithms, and more).\par
 An important idea to note is that while we can do many of these operations at once, at their core, these operations are `binary': they take in two entries and spit one result out. For example, when we add, we need to add two numbers, and only one number comes out. In a sense, binary operations are a little machine that accepts two coins and produces one coin. Perhaps we enter the numbers 6 and 3 and our machine produces 9. Or we can enter 6 and 3 and our machine produces 2 (if the machine in question is division)!\par
 These operations become more and more complex as we do many of them in a row and also ask what happens if we do certain operations together. In general, we should like to group these operations into pairs anyway: for example, we can write $2+3+4+5+6+7$, but in reality, what we are actually doing is performing the operation $2+3$, then taking the result of 5 and performing $5+4$, then taking \textit{that} result and computing $9+5$, and this process continues until we are done. All of this is to say that our operations are truly just two numbers somehow becoming one in different ways.\par
 As for the motivation for studying operations, it is rather obvious that operations give life and depth to the numbers: one may simply count how many candies are in their bag, or they can add the number of candies that they and their friends have in order to find the total number of candies. Such operations truly make numbers useful and thus warrant concentrated and special study.
-\section{Operations}
-\subsection{Addition}
-\subsubsection{Properties of Addition}
+\section{Addition}
+\subsection{Properties of Addition}
 Addition has a few very nice properties. They are as follows:
 \begin{property}[(Associative Property of Addition)]
 	For any three real numbers $a,b,c$, we have
@@ -190,7 +179,7 @@ Addition has a few very nice properties. They are as follows:
 	\end{center}
 \end{property}
 These should simply be accepted as fact, but if there is any confusion about them, the reader may simply appeal to intuition and usage of integer examples.
-\subsubsection{Addition on Fractions}
+\subsection{Addition on Fractions}
 Fractions, particularly the rational numbers $\mathbb{Q}$ as previously discussed, give us a way to describe some of the numbers that lie between integers. They, along with the irrational numbers, fill our real number line completely. Then it follows that we should be curious about how to add and multiply these numbers. This is the object of our current investigation.\par
 It is useful to think of fractions as a `slice' of a whole --- a pie, a paper, or whatever else may suit the reader. Indeed, adding fraction sof like denominators is trivial: we simply say that the numerator increases by normal addition. This intuitively makes sense: if we have $\dfrac{1}{n}$, this is something akin to saying that we have split 1 whole into $n$ equal, or `congruent,' parts. Then if we have multiple of these together, say perhaps $\dfrac{1}{n}+\dfrac{2}{n}$, we should surely have three of those even slices. In general, we will codify this as follows.
 \begin{theorem}
@@ -216,7 +205,7 @@ In general, we can say that we add fractions by ensuring that they have the same
 	In some sense, what we have computed is actually just $\dfrac{13}{15}\cdot1+\dfrac{21}{19}\cdot1$, and of course this is equal to the original expression.
 \end{remark}
 This finishes our addition on fractions; we have now learned how to add fractions of like and unlike denominators. Of course, for addition of fractions with negative numerators, all we need to do is observe that after our denominators agree, the numerators become $p_{1}+p_{2}$, and this is simply integer addition, as demonstrated in Section 2.1.1.
-\subsubsection{Addition on Decimals}
+\subsection{Addition on Decimals}
 Addition of decimals is executed in a rather simple way: one only needs to observe that the decimal points are placed correctly. This is done as follows: suppose we want to compute $0.34+12.1429$. If we simply add 4 to the 9 and add 3 to the second 2, we will end up with a completely incorrect answer because we are adding numbers in the incorrect tenths places. Instead, if we `line up' the decimals and compute
 \[
 \begin{array}{@{}cl}
@@ -266,21 +255,21 @@ we should instead line the decimals up to create
 This makes sense, since the decimal point always follows the ones place, so if we place the decimal points on top of each other, it guarantees that the ones places are lined up, and the alignment of everything else to the left and right of it follows.\par
 This concludes our study of decimal addition.
 
-\subsection{Subtraction}
-\subsubsection{Preliminaries}
+\section{Subtraction}
+\subsection{Preliminaries}
 This section on subtraction will be extremely short, largely because all of our work is already done.  All that we must do is apply our previous knowledge from the first section on addition.
-\subsubsection{Subtraction on Integers}
+\subsection{Subtraction on Integers}
 This is simply addition of negative integers. Refer to the addition of integers section on Section 2.1.2.
-\subsubsection{Subtraction of Fractions}
+\subsection{Subtraction of Fractions}
 As mentioned before, subtraction of fractions is merely treated as integer subtraction once the denominators `agree' and the subtraction problem reduces to being solely in the numerator.
-\subsubsection{Subtraction of Decimals}
+\subsection{Subtraction of Decimals}
 This functions exactly as regular integer subtraction does, only that we still carefully place the decimals on top of one another in order to ensure correct tens place alignment.\par
 That is all.
 
-\subsection{Multiplication}
-\subsubsection{Preliminaries}
+\section{Multiplication}
+\subsection{Preliminaries}
 It is likely familiar to the reader, but multiplication of real numbers essentially functions as repeated addition. The difference is largely notational: we may write $3+3+3+3+3$, or we may write $3\times5$. Either produces 15 and means ``five threes.'' However, this becomes less and less obvious as we involve fractions and decimals, since there is no clear way to easily compute, say, ``nine-and-a-quarter sevens.'' Thus, we should define these operations. However, before this, multiplication has a few very powerful properties that must be observed. Note that throughout this section and the notes as a whole, instead of $\times$, we will write $\cdot$ for multiplication. This is to avoid confusion when the variable $x$ is later used. If a number is written directly in before or after a parenthetical expression or variable, multiplication is implied.
-\subsubsection{Properties of Multiplication}
+\subsection{Properties of Multiplication}
 \begin{property}[(Associative Property of Multiplication)]
 	For any three real numbers $a,b,c$, we have
 	\begin{center}
@@ -315,7 +304,7 @@ We have one last unique property to discuss, and this is an interesting relation
 	Essentially, this property states that when multiple numbers are being added within parentheses then multiplied altogether to another number, we may also simply multiply each number first by the other number, then add up all of the products.
 \end{property}
 This property makes some sense: we know from the order of operations that the addition must take place before the multiplication, and so whatever is produced in the end is essentially all of the $b_{n}$s together as one. Then if that number, call it $b$, is multiplied to $a$, in some sense, this is the combination of all of those $b_{n}$s being multiplied to $a$ all at once. It follows that if we want to do the multiplication first, we should observe that every single $b_{n}$ should still be multiplied to $a$; it would not make sense to say $a\cdot(b_{1}+b_{2}+\ldots) = a\cdot b_{1}+b_{2}+b_{3}+\ldots$.
-\subsubsection{Multiplication on Integers}
+\subsection{Multiplication on Integers}
 Multiplication on integers operates exactly as one would expect it to: for two positive integers $n$ and $m$, we have $n\cdot m = n+n+n+\ldots+n$, where $n$ is added to itself $m$ times. We should take a quick excursion to introduce some advanced notation that is actually quite simple.
 \begin{definition}[(Sigma Notation, $\sum$)]
 	Yes, what we are about to discuss is genuinely named ``sigma notation.'' Feel free to make various sigma jokes.\par
@@ -357,7 +346,7 @@ Every student should memorize all combinations of multiplication of integers bet
 		$9$&$9$&$18$&$27$&$36$&$45$&$54$&$63$&$72$&$81$\\\hline
 	\end{tabular}
 \end{center}
-\subsubsection{Multiplication on Fractions}
+\subsection{Multiplication on Fractions}
 This is when the definition and action of multiplication becomes unclear. It is not immediately obvious how multiplication of a number by a fraction works, or worse, how multiplication of two fractions works.\par
 We may rely on understanding fraction multiplication as taking some even part of another number. For example, multiplying 34 by $\dfrac{1}{5}$ is to ask to split 34 into 5 equal parts. Thankfully, there is no confusing procedure like there is in fraction addition for finding a common denominator. One simply multiplies the numerators and denominators, and this is reasoned as follows.\par
 Suppose that we have a fraction $\dfrac{n}{m}$. This can be written $n\cdot\dfrac{1}{m}$, and this fact can be verified by using our above definitions of integer multiplication and fraction addition. Then if we multiply two fractions $\dfrac{n_{1}}{m_{1}}\cdot\dfrac{n_{2}}{m_{2}}$, we can write
@@ -383,7 +372,7 @@ and we produce the result that we originally intended to: having the numerators 
 		$\dfrac{n_{1}}{m_{1}}\cdot\dfrac{n_{2}}{m_{2}} = \dfrac{n_{1}n_{2}}{m_{1}m_{2}}$.
 	\end{center}
 \end{formula}
-\subsubsection{Multiplication on Rational Decimals}
+\subsection{Multiplication on Rational Decimals}
 For this section, we will expose the problem in the opposite order of how we usually do, that is, we will first introduce the computational technique and then justify it. What we want to note here is that any finite decimal multiplication can be performed in two steps: firstly, we completely ignore the existence of the decimals and perform the regular multiplication, and afterward, we count the total number of decimal places (digits after the decimal point) in both numbers combined, and place the decimal in the product by counting from the right. This is as pictured:\par
 \[
 	\begin{array}{@{}cr}
@@ -401,17 +390,17 @@ The normal multiplication is obvious, but the reader should note that the decima
 Now that the computational aspect has been explained we should explore why such a bizarre technique works. The essence of this is that finite decimals can be expressed as fractions by using our knowledge on tens places. How? Well, observe that multiplying any decimal by 10 moves the decimal point to the right by one place. It is tedious to show this, but one may check this by adding any decimal to itself 10 times.\par
 Taking this as a fact, we can then say that, for example, $1.58\cdot10 = 15.8$, and then that $1.58\cdot100 = 158$. Since these two are equal expressions, if we divide either side by 100, equality should be preserved. This is the same concept as writing $10=10$ and dividing each side by 5; the result is obviously $2=2$, and equality is preserved by the fact that we performed the same operation on either side of the equation. Then we produce $1.58 = \dfrac{158}{100}$.\par
 How is this relevant? This is useful because we can reference our work on fraction multiplication. In the given example, we can write this as $1.58\cdot0.34 = 158\cdot\dfrac{1}{100}\cdot34\cdot\dfrac{1}{100}$. This is rewritten as $158\cdot34\cdot\dfrac{1}{1000}$, and it is apparent that we carry out the usual multiplication then move the decimal back 4 spaces due to the division by 1000. This is the explicit form of our seemingly random computational technique.
-\subsection{Division}
+\section{Division}
 to-do: write in that fractions are division because they are conceptually the same. probably put into rational numbers section
-\subsubsection{Preliminaries}
+\subsection{Preliminaries}
 Similarly to subtraction, since division is the inverse of multiplication, this section will be rather short since most of the basics have been exposed. Recall that all division essentially creates a fraction: when we ask for, say, $243\div7$, what we are really asking is to split 243 into 7 equal pieces, and of course, if we ask such a thing, each of those pieces will be $\dfrac{243}{7}$.
-\subsubsection{Division on Integers}
+\subsection{Division on Integers}
 Because of the aforementioned property, the division of any two integers $n,m$ is written $n\div m=\dfrac{n}{m}$ and this is more or less the complete result. As for actual computation of long division, this is best described using an example, then describing the underlying theory.\par
 Suppose we want to divide an integer $n$ by a smaller integer $m$. What we can do is split the larger number into its component tens places: for example, we would write $5324 = 5000+300+20+4$. The goal is then to divide each section by $m$; this is because of the Distributive Property of Multiplication. What we are essentially writing is $5324\div m = 5324\cdot\dfrac{1}{m} = (5000+300+20+4)\cdot\dfrac{1}{m} = 5000\cdot\dfrac{1}{m}+300\cdot\dfrac{1}{m}+20\cdot\dfrac{1}{m}+4\cdot\dfrac{1}{m} = 5000\div m + 300\div m + 20\div m + 4\div m$. Well, how is this done?\par
 First note the first number of 5000, 5. There is a non-trivial (non-zero) multiple of 4 that `fits into' 5, namely $4\cdot1=4<5$. Now, since this is 5000 and not 5, we will multiply 4 not by 1 but by 1000, and subtrr at least by 1000, since we can see that $4\cdot1000=4000$. We will subtract this from the 5000 to obtain 1000 as a remainder. There is no obvious way to divide the first number of 1000 by 4 simply by looking at the first digit, so we will combine this with the next number, 300. Now, we want to divide $1000+300=1300$ by 4, and we see that while no positive multiple of 4 does `fits into' 1, three 4s may fit into 13. We will do this; we write $4\cdot300=1200$ and remove this from the 1300 to obtain a remaining 100. This pro
 
 
-\section{Algebraic Techniques}
+\chapter{Algebraic Techniques}
 
 \begin{example}\singlespacing\vspace{-0.5cm}
 	\setcounter{equation}{0}
@@ -434,8 +423,8 @@ First note the first number of 5000, 5. There is a non-trivial (non-zero) multip
 \end{example}
 
 
-\section{Geometric Techniques}
-\subsection{Area of Figures}
+\chapter{Geometric Techniques}
+\section{Area of Figures}
 aaaa
 \begin{figure}[htbp]
 	\centering
@@ -485,63 +474,59 @@ aaaa
 	\caption{A complex figure (a pentagon), subdivided into figures of known area.}
 \end{figure}
 
-\section{Further Operations}
-\subsection{Exponents and Exponentiation}
-\subsection{The Logarithm}
-\subsection{Factorials}
-\subsubsection{A Note on the Uncharted Path: Combinatorics}
-
-\section{Building Blocks of Higher-Level Mathematics: Set Theory}
-\subsection{Sets and Useful Notation}
-\subsection{How to Make Sets Marry: Union and Intersection}
-\subsection{Mortal Enemies: Complements and Differences}
-\subsection{A Justification for Proofs and Logic (Why You Should Care)}
-
-\section{Functions}
-\subsection{A Machine That Gives You Only One Result}
-\subsection{Killing Everything As We Go: Surjective/Onto Functions}
-\subsection{Loyalty: Injective/One-to-One Functions}
-\subsection{A Backward Function...? Inverses and Pre-Images}
+\chapter{Further Operations}
+\section{Exponents and Exponentiation}
+\section{The Logarithm}
+\section{Factorials}
+\subsection{A Note on the Uncharted Path: Combinatorics}
 
 \begin{advanced}
-\section{The Flavour of Mathematical Analysis: Limits and the Infinitesimal}
-\subsection{Are We There Yet? The Limit}
-\subsection{Distances, Open Sets, and Numbers That Bind}
-\subsubsection{How Far is Something? Metric Spaces}
-\subsection{Closed Sets}
-\subsection{Compact Sets}
-\subsubsection{The Heine-Borel Theorem}
-\subsection{A Long Chain: Sequences and Series}
-\subsubsection{The Bolzano-Weierstrass Theorem}
-\subsection{Useful Notation and Remarks on Their Intuition}
-\subsection{Good Enough: Continuity and Continuous Functions}
-\subsection{Real Numbers: Filling the Blanks}
+\chapter{Building Blocks of Higher-Level Mathematics: Set \mbox{Theory}}
+\section{Sets and Useful Notation}
+\section{How to Make Sets Marry: Union and Intersection}
+\section{Mortal Enemies: Complements and Differences}
+\section{A Justification for Proofs and Logic (Why You Should Care)}
+
+\chapter{Functions}
+\section{A Machine That Gives You Only One Result}
+\section{Killing Everything As We Go: Surjective/Onto Functions}
+\section{Loyalty: Injective/One-to-One Functions}
+\section{A Backward Function...? Inverses and Pre-Images}
+
+\chapter{The Flavour of Mathematical Analysis: Limits and the Infinitesimal}
+\section{Are We There Yet? The Limit}
+\section{Distances, Open Sets, and Numbers That Bind}
+\section{How Far is Something? Metric Spaces}
+\section{Closed Sets}
+\section{Compact Sets}
+\subsection{The Heine-Borel Theorem}
+\section{A Long Chain: Sequences and Series}
+\subsection{The Bolzano-Weierstrass Theorem}
+\section{Useful Notation and Remarks on Their Intuition}
+\section{Good Enough: Continuity and Continuous Functions}
+\section{Real Numbers: Filling the Blanks}
+
+\chapter{More on Geometry: Curves, Area, and Sums}
+
+\chapter{Descending Down the Staircase: Derivation, the \mbox{Integral,} and the \mbox{Fundamental} Theorem of Calculus}
+\section{Rates of Change}
+\section{The Derivative}
+
+\chapter{What Now?}
+\section{Descriptions of Further Mathematics}
+\subsection{Mathematical Analysis}
+\subsection{Applied Mathematics}
+\subsection{Algebra}
+\subsection{Number Theory}
+\subsection{Topology}
+\subsection{Geometry}
+\section{The Love of the Game}
+\section{Competition Mathematics}
+\section{A Final Remark}
 \end{advanced}
-\newpage
 
-\section{More on Geometry: Curves, Area, and Sums}
-
-\section{Descending Down the Staircase: Derivation, the \mbox{Integral,} and the \mbox{Fundamental} Theorem of Calculus}
-\subsection{Rates of Change}
-\subsection{The Derivative}
-
-\section{What Now?}
-\subsection{Descriptions of Further Mathematics}
-\subsubsection{Mathematical Analysis}
-\subsubsection{Applied Mathematics}
-\begin{advanced}\subsubsection{Algebra}\end{advanced}
-\subsubsection{Number Theory}
-\subsubsection{Topology}
-\subsubsection{Geometry}
-\subsection{The Love of the Game}
-\subsection{Competition Mathematics}
-\begin{advanced}\subsection{A Final Remark}\end{advanced}
-\newpage
-
-
-
-\section{Solutions}
-\subsection{Solutions to Chapter 1 Exercises}
+\chapter{Solutions}
+\section{Solutions to Chapter 1 Exercises}
 \begin{enumerate}
 	\item Any six counting numbers will do. An easy list is $\{1,2,3,4,5,6\}$.
 	\item There is only one answer, and this is 0.
